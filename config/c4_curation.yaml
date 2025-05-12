@@ -1,0 +1,15 @@
+input_field: text
+filters:
+  - name: nemo_curator.filters.heuristic_filter.BoilerPlateStringFilter
+    params:
+      remove_if_at_top_or_bottom: True
+      max_boilerplate_string_ratio: 0.4
+  - name: nemo_curator.filters.heuristic_filter.LongWordFilter
+    params:
+      max_word_length: 1000
+  - name: nemo_curator.filters.heuristic_filter.PunctuationFilter
+    params:
+      max_num_sentences_without_endmark_ratio: 0.85
+  - name: nemo_curator.filters.heuristic_filter.EllipsisFilter
+    params:
+      max_num_lines_ending_with_ellipsis_ratio: 0.3
